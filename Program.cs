@@ -149,7 +149,7 @@ namespace TodoApp
                 Console.WriteLine("No tasks available to remove ");
                 return;
             }
-            Console.WriteLine("Witch task want to remove? picka a number of task:");
+            Console.WriteLine("Witch task want to remove? pick a number of task:");
             for (int i = 0; i < tasks.Count; i++)
             {
                 string status = completedTasks[i] ? "[x]" : "[]";
