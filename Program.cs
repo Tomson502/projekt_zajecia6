@@ -46,6 +46,70 @@ namespace TodoApp
                 }
             }
         }
-         
+        static void AddTask()
+        {
+            Console.Write("Enter the task: ");
+            string task = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(task))
+            {
+                tasks.Add(task);
+                Console.WriteLine("Task added successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Task cannot be empty.");
+            }
+        }
+        static void AddTask()
+        {
+            Console.Write("Enter the task: ");
+            string newtask = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(task))
+            {
+                tasks.Add(task);
+                Console.WriteLine("Task added successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Task cannot be empty.");
+            }
+        }
+        static void AddTask()
+        {
+            Console.Write("Enter the task: ");
+            string newtask = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(newtask))
+            {
+                Console.WriteLine("task description cannot be empty.");
+                return;
+            }
+            tasks.Add(newtask);
+            completed.Add(false);
+            Console.WriteLine($"Task added successfully: \"{newtask}\"");    
+        }
+        static void ListTasks()
+        {
+            if (tasks.Count == 0)
+            {
+                Console.WriteLine("List is empty. Please add a task.");
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Tasks List:");
+                for (int i = 0; i < tasks.Count; i++)
+                {
+                    string status = completedTasks[i] ? "[x]" : "[]";
+                    Console.WriteLine($"{i + 1}. {status} {tasks[i]}");
+                }
+            }
+        }
+        static void CompleteTask()
+        {
+            Console.WriteLine("In progress...");
+        }        static void RemoveTasks()
+        {
+            Console.WriteLine("In progress...");
+        }
     }
 }
