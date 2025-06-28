@@ -89,7 +89,20 @@ namespace TodoApp
         }
         static void ListTasks()
         {
-            Console.WriteLine("In progress...");
+            if (tasks.Count == 0)
+            {
+                Console.WriteLine("List is empty. Please add a task.");
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Tasks List:");
+                for (int i = 0; i < tasks.Count; i++)
+                {
+                    string status = completedTasks[i] ? "[x]" : "[]";
+                    Console.WriteLine($"{i + 1}. {status} {tasks[i]}");
+                }
+            }
         }
         static void CompleteTask()
         {
