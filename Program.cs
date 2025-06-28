@@ -106,7 +106,41 @@ namespace TodoApp
         }
         static void CompleteTask()
         {
-            Console.WriteLine("In progress...");
+            if (tasks.Count == 0)
+            {
+                Console.WriteLine("No tasks available to complete.");
+                return;
+            }
+            Console.Write("Enter the task number to complete: ");
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                string status = completedTasks[i] ? "[x]" : "[]";
+                Console.WriteLine($"{i + 1}. {status} {tasks[i]}");
+            }
+            Console.Write("Number of the task to complete: ");
+            string input = Console.ReadLine();
+            if (!int.TryParse(input, out int taskNumber))
+            {
+                Console.WriteLine("Invalid input. Please enter a valid task number.");
+                return;
+            }
+
+            int index = taskNumber - 1;
+            if (index < 0 || index >= tasks.Count)
+            {
+                Console.WriteLine("Task number out of range. Please try again.");
+                return;
+            }
+
+            if (completedTasks[index])
+            {
+                Console.WriteLine($"This \"{task[index]}\" is already completed.");
+            }
+            else
+            {
+                completed[index] = true;
+                Console.WriteLine($"Task \"{tasks[index]}\" marked as completed.");
+            }
         }        static void RemoveTasks()
         {
             Console.WriteLine("In progress...");
