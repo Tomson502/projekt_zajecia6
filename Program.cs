@@ -46,6 +46,30 @@ namespace TodoApp
                 }
             }
         }
-         
+        static void AddTask()
+        {
+            Console.Write("Enter the task: ");
+            string task = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(task))
+            {
+                tasks.Add(task);
+                Console.WriteLine("Task added successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Task cannot be empty.");
+            }
+        }
+        static void ListTasks()
+        {
+            Console.WriteLine("In progress...");
+        }
+        static void CompleteTask()
+        {
+            Console.WriteLine("In progress...");
+        }        static void RemoveTasks()
+        {
+            Console.WriteLine("In progress...");
+        }
     }
 }
